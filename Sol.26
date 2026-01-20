@@ -1,0 +1,12 @@
+class Solution:
+    def removeDuplicates(self, nums: List[int]) -> int:
+        if not nums:
+            return 0
+        
+        n = 0  # last unique element index
+        for i in range(1, len(nums)):  # i scans the array
+            if nums[i] != nums[n]:  # found a new unique element
+                n += 1
+                nums[n] = nums[i]  # move it to the next position
+        
+        return n + 1  
